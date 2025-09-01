@@ -5,15 +5,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelector('.nav-links');
 
     hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active'); // Adicione esta linha
+        hamburger.classList.toggle('active');
         navLinks.classList.toggle('active');
     });
 
-    // Fecha o menu ao clicar em um link
+    // Fecha o menu e reverte o ícone ao clicar em um link
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
             if (navLinks.classList.contains('active')) {
                 navLinks.classList.remove('active');
+                hamburger.classList.remove('active'); // Adicionado: Remove a classe 'active' do ícone
             }
         });
     });
@@ -70,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Iniciar Autoplay
         const startAutoPlay = () => {
-            autoPlayInterval = setInterval(moveToNext, 5000); // Passa a cada 5 segundos
+            autoPlayInterval = setInterval(moveToNext, 3500); // Passa a cada 3,5 segundos
         };
 
         const stopAutoPlay = () => {

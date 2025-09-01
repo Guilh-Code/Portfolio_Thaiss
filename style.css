@@ -106,10 +106,11 @@ section {
     height: 70px;
 }
 
-.navbar .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
+/* Corrigido: Removido estilos de texto e adicionado estilo para a imagem */
+.navbar .logo img {
+    height: 50px; /* Ajuste a altura da sua logo conforme necessário */
+    width: auto;  /* Mantém a proporção da imagem */
+    display: block; /* Remove espaços extras embaixo da imagem */
 }
 
 .navbar .nav-links {
@@ -177,14 +178,12 @@ section {
         text-align: center;
         padding: 1rem 0;
         box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        /* Adiciona transição de entrada */
         transform: translateY(-10px);
         opacity: 0;
         transition: transform 0.3s ease, opacity 0.3s ease;
     }
     .navbar .nav-links.active {
         display: flex;
-        /* Estado final da transição */
         transform: translateY(0);
         opacity: 1;
     }
@@ -195,7 +194,6 @@ section {
         display: block;
     }
 
-    /* ANIMAÇÃO DO HAMBÚRGUER PARA "X" */
     .hamburger.active .bar:nth-child(2) {
         opacity: 0;
     }
